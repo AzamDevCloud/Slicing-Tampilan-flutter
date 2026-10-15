@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'main.dart';
+import '../main.dart';
 import 'login_page.dart';
 
 class SplashPage extends StatelessWidget {

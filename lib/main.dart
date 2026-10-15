@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'splash_page.dart';
+import 'pages/splash_page.dart';
 
 // warna aplikasi (navy dan hijau lime, sama seperti desain)
 const Color navy = Color(0xFF0F1B3A);

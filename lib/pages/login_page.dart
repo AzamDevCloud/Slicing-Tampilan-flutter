@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
+import 'package:slicingtampilan/services/api.dart';
+import '../main.dart';
 import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -24,6 +25,19 @@ class _LoginPageState extends State<LoginPage> {
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
+  }
+  Future<void> login() async {
+    try {
+      final response = await ApiService.post("/auth/login", {
+        "Email": emailController.text.trim(),
+        "password": passwordController.text
+      });
+
+      print(response);
+      
+    }catch (e) {
+      print(e);
+    }
   }
 
   @override
@@ -110,6 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
+                  onLongPress: login,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: lime,
                     foregroundColor: navy,
